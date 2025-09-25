@@ -240,6 +240,52 @@
         background: #e3e6eb;
         border-radius: 6px;
       }
+      /* Телефон экраны үшін (макс. ені 768px болса) */
+      @media (max-width: 768px) {
+        .tg-app {
+          flex-direction: column; /* Бүйірден емес, үстінен-астына түсіру */
+          max-width: 100%;
+          height: 100vh;
+          border-radius: 0; /* Телефонда бұрыштарын тік қыламыз */
+        }
+
+        .sidebar {
+          width: 100%;
+          height: 50%; /* Жарты экран sidebar */
+          border-right: none;
+          border-bottom: 1px solid #e3e6eb;
+        }
+
+        .chat-area {
+          width: 100%;
+          height: 50%; /* Жарты экран чат */
+        }
+
+        /* Егер sidebar тым көп орын алса, биіктігін кішірейтуге болады */
+        .chat-list {
+          max-height: 200px;
+        }
+
+        .chat-input-area input {
+          font-size: 14px;
+        }
+
+        .chat-input-area button {
+          width: 34px;
+          height: 34px;
+          font-size: 18px;
+        }
+      }
+
+      /* Өте кішкентай экрандар (500px↓) */
+      @media (max-width: 500px) {
+        .sidebar {
+          display: none; /* Тек чат қалады */
+        }
+        .chat-area {
+          height: 100vh;
+        }
+      }
     </style>
   </head>
   <body>
